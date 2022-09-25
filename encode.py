@@ -6,6 +6,7 @@ def encode():
     image_name = input("Enter the name of the image: ")
     image = Image.open(image_name)
     data = input("Enter the data to encode: ")
+    data = data + "[ENDOFDATA]"
     if len(data) > image.size[0] * image.size[1]:
         print("The data is too large to fit in the image")
         sys.exit()
