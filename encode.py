@@ -2,8 +2,7 @@ import sys
 import os
 from PIL import Image
 
-def encode():
-    image_name = input("Enter the name of the image: ")
+def encodeImage():
     image = Image.open(image_name)
     data = input("Enter the data to encode: ")
     data = data + "[ENDOFDATA]"
@@ -34,4 +33,9 @@ def encode():
             pixels[x, y] = (red, green, blue)
     image.save("encoded.png")
 
-encode()
+file_name = input("Enter the name of the file including the extension: ")
+file_type = file_name.split('.')[1]
+if file_type == "png":
+    encodeImage()
+else:
+    print('Error')
