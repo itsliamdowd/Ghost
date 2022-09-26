@@ -2,13 +2,6 @@ import sys
 import os
 from PIL import Image
 
-file_name = input("Enter the name of the file including the extension: ")
-file_type = file_name.split('.')[1]
-if file_type == "png":
-    decodeImage()
-else:
-    print('Error')
-
 def decodeImage():
     image = Image.open(image_name)
     pixels = image.load()
@@ -43,3 +36,10 @@ def decodeImage():
             break
     decoded_data = decoded_data[:-10]
     print(decoded_data)
+    
+file_name = input("Enter the name of the file including the extension: ")
+file_type = file_name.split('.')[1]
+if file_type == "png":
+    decodeImage()
+else:
+    print('Error')
